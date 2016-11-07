@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="Chen.Yinghe.PJ2.MainPage"
+		 Padding="0, 20, 0, 0">
+	<StackLayout>
+		<Image x:Name="currentImage" VerticalOptions="CenterAndExpand" 
+				PropertyChanged="OnImagePropertyChanged" />
+		<ActivityIndicator x:Name="activityIndicator" />
+		<Slider x:Name="TimeSlider" ValueChanged="OnValueChanged" Maximum="60" Minimum="1" Value="1" />
+		<Stepper x:Name="TimeStepper" ValueChanged="OnValueChanged" Maximum="60" Minimum="1" Value="1" 
+			HorizontalOptions="CenterAndExpand" />
+		<Label Text="Interval Time(s): "/>
+		<Entry x:Name="TimeEntry" Placeholder="Type 1-60 here" Keyboard="Numeric" TextColor="Black" 
+			Text="1" Completed="OnEntryValueChanged"/>
+			<!--TextChanged="OnEntryTextChanged" Completed="function here"-->
+		<Label Text="Image URL:"/>
+		<Entry x:Name="UrlEntry" Placeholder="www.example.com" Keyboard="Url" TextColor="Blue"
+			Completed="OnUrlChanged" />
+		<Switch Toggled="OnSwitch" HorizontalOptions="Center" />
+		
+	</StackLayout>
+</ContentPage>
